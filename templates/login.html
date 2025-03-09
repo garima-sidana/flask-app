@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{% block title%}
+Login
+{% endblock%}
+
+{% block content%}
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+            <br>
+            <h1 class="h3 mb-3 font-weight-normal">
+                Login to your account
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="Username") }}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+
+            <br>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+
+            <div class="checkbox mb-3">
+            
+            <br>
+               <h6>Don't have an account?</h6>
+               <a class="btn btn-lg btn-block btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+            
+
+        </form>
+    </div>
+{% endblock%}
